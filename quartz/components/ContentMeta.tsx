@@ -15,8 +15,8 @@ interface ContentMetaOptions {
 }
 
 const defaultOptions: ContentMetaOptions = {
-  showReadingTime: true,
-  showComma: true,
+  showReadingTime: false,
+  showComma: false,
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
@@ -24,14 +24,29 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   const options: ContentMetaOptions = { ...defaultOptions, ...opts }
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
+  
+
     const text = fileData.text
+if (!text) return null
 
-    if (text) {
-      const segments: (string | JSX.Element)[] = []
+const segments: (string | JSX.Element)[] = []
+const fm = fileData.frontmatter ?? {}
 
-      if (fileData.dates) {
-        segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
-      }
+
+if (fm?.author) {
+  segments.push(<span>Author: {fm.author}</span>)
+}
+
+if (fm?.source) {
+  segments.push(<span>Source: {fm.source}</span>)
+}
+
+if (fm?.published && fileData.dates?.published) {
+  segments.push(
+    <span>Published: <Date date={fileData.dates.published} locale={cfg.locale} /></span>
+  )
+}
+
 
       // Display reading time if enabled
       if (options.showReadingTime) {
@@ -41,15 +56,15 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         })
         segments.push(<span>{displayedTime}</span>)
       }
-
+if (fm?.description) {
+  segments.push(<span>Description: {fm.description}</span>)
+}
       return (
         <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
           {segments}
         </p>
       )
-    } else {
-      return null
-    }
+   
   }
 
   ContentMetadata.css = style

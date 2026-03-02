@@ -38,7 +38,30 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      mapFn: (node) => {
+        // Diagnostic logging
+        console.log("🔍 Explorer Node:", {
+          isFolder: node.isFolder,
+          name: node.name,
+          displayName: node.displayName,
+          hasData: !!node.data,
+          dataKeys: node.data ? Object.keys(node.data) : [],
+          frontmatter: node.data?.frontmatter,
+          shortTitle: node.data?.frontmatter?.shortTitle
+        })
+        return node
+      },
+      sortFn: (a, b) => {
+        if (a.isFolder && !b.isFolder) return -1
+        if (!a.isFolder && b.isFolder) return 1
+        return (a.displayName || "").localeCompare(b.displayName || "", undefined, {
+          numeric: true,
+          sensitivity: "base"
+        })
+      },
+      order: ["map", "filter", "sort"]
+    }),
   ],
   right: [
     Component.Graph(),
@@ -47,7 +70,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
 }
 
-// components for pages that display lists of pages  (e.g. tags or folders)
+// components for pages that display lists of pages (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
@@ -62,7 +85,30 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      mapFn: (node) => {
+        // Diagnostic logging
+        console.log("🔍 Explorer Node:", {
+          isFolder: node.isFolder,
+          name: node.name,
+          displayName: node.displayName,
+          hasData: !!node.data,
+          dataKeys: node.data ? Object.keys(node.data) : [],
+          frontmatter: node.data?.frontmatter,
+          shortTitle: node.data?.frontmatter?.shortTitle
+        })
+        return node
+      },
+      sortFn: (a, b) => {
+        if (a.isFolder && !b.isFolder) return -1
+        if (!a.isFolder && b.isFolder) return 1
+        return (a.displayName || "").localeCompare(b.displayName || "", undefined, {
+          numeric: true,
+          sensitivity: "base"
+        })
+      },
+      order: ["map", "filter", "sort"]
+    }),
   ],
   right: [],
 }
