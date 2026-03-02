@@ -8,9 +8,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout site repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: site
 
@@ -25,9 +34,11 @@ jobs:
         run: |
           rm -rf site/content/*
           cp -r notes/* site/content/
+          echo "Content folder after copy:"
+          ls -la site/content/
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
@@ -40,9 +51,10 @@ jobs:
         run: cd site && npx quartz build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site/public
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
+        id: deployment
