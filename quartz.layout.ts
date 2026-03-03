@@ -26,7 +26,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
+    // 👇 Replaced PageTitle with placeholder
+    () => <div style={{ padding: '0.5rem 0', fontWeight: 'bold' }}>Logo Here</div>,
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -74,7 +75,8 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.PageTitle(),
+    // 👇 Replaced PageTitle with placeholder
+    () => <div style={{ padding: '0.5rem 0', fontWeight: 'bold' }}>Logo Here</div>,
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
