@@ -26,21 +26,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    // 👇 Custom logo placeholder with homepage link
-    {
-      Component: () => (
-        <a href="/" style={{ 
-          display: 'inline-block', 
-          padding: '0.5rem 1rem 0.5rem 0',
-          fontWeight: 'bold',
-          textDecoration: 'none',
-          color: 'var(--dark)',
-          fontSize: '1.2rem'
-        }}>
-          Logo Here
-        </a>
-      ),
-    },
+    Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -88,21 +74,7 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    // 👇 Same custom logo placeholder here
-    {
-      Component: () => (
-        <a href="/" style={{ 
-          display: 'inline-block', 
-          padding: '0.5rem 1rem 0.5rem 0',
-          fontWeight: 'bold',
-          textDecoration: 'none',
-          color: 'var(--dark)',
-          fontSize: '1.2rem'
-        }}>
-          Logo Here
-        </a>
-      ),
-    },
+    Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
