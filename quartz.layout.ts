@@ -26,7 +26,22 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
+    // Custom logo instead of PageTitle
+  {
+    Component: () => (
+      <a href="/" style={{ display: 'inline-block' }}>
+        <img 
+          src="/quartz/static/usefor_logo.png" 
+          alt="Site Logo" 
+          style={{ 
+            height: '50px',
+            width: 'auto',
+            verticalAlign: 'middle'
+          }} 
+        />
+      </a>
+    ),
+  },
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -74,7 +89,17 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.PageTitle(),
+    {
+  Component: () => (
+    <a href="/" style={{ display: 'inline-block' }}>
+      <img 
+        src="/quartz/static/logo.png" 
+        alt="Site Logo" 
+        style={{ height: '50px', width: 'auto' }} 
+      />
+    </a>
+  ),
+},
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
