@@ -30,9 +30,9 @@ export const defaultContentPageLayout: PageLayout = {
   {
   Component: () => (
     <div>
-      <a href="/">
+      <a href={"/"}>
         <img 
-          src="/static/usefor_logo.png" 
+          src={"/static/usefor_logo.png"} 
           alt="Logo" 
           width="200"
         />
@@ -90,9 +90,9 @@ export const defaultListPageLayout: PageLayout = {
     {
   Component: () => (
     <div>
-      <a href="/">
+      <a href={"/"}>
         <img 
-          src="/static/usefor_logo.png" 
+          src={"/static/usefor_logo.png"} 
           alt="Logo" 
           width="200"
         />
