@@ -31,7 +31,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component: () => (
       <a href="/" style={{ display: 'inline-block' }}>
         <img 
-          src="/quartz/static/usefor_logo.png" 
+          src="/static/usefor_logo.png" 
           alt="Site Logo" 
           style={{ 
             height: '50px',
@@ -93,7 +93,7 @@ export const defaultListPageLayout: PageLayout = {
   Component: () => (
     <a href="/" style={{ display: 'inline-block' }}>
       <img 
-        src="/quartz/static/logo.png" 
+        src="/static/logo.png" 
         alt="Site Logo" 
         style={{ height: '50px', width: 'auto' }} 
       />
