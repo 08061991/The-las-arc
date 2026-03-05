@@ -28,17 +28,7 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     // Custom logo instead of PageTitle
   {
-  Component: () => (
-    <div>
-      <a href={"/"}>
-        <img 
-          src={"/static/usefor_logo.png"} 
-          alt="Logo" 
-          width="200"
-        />
-      </a>
-    </div>
-  ),
+  Component: () => '<a href="/"><img src="/static/usefor_logo.png" alt="Logo" width="200"/></a>',
 },
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
@@ -88,17 +78,7 @@ export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     {
-  Component: () => (
-    <div>
-      <a href={"/"}>
-        <img 
-          src={"/static/usefor_logo.png"} 
-          alt="Logo" 
-          width="200"
-        />
-      </a>
-    </div>
-  ),
+  Component: () => '<a href="/"><img src="/static/usefor_logo.png" alt="Logo" width="200"/></a>',
 },
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
