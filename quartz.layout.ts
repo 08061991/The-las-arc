@@ -28,20 +28,18 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     // Custom logo instead of PageTitle
   {
-    Component: () => (
-      <a href="/" style={{ display: 'inline-block' }}>
+  Component: () => (
+    <div>
+      <a href="/">
         <img 
           src="/static/usefor_logo.png" 
-          alt="Site Logo" 
-          style={{ 
-            height: '50px',
-            width: 'auto',
-            verticalAlign: 'middle'
-          }} 
+          alt="Logo" 
+          width="200"
         />
       </a>
-    ),
-  },
+    </div>
+  ),
+},
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -91,13 +89,15 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     {
   Component: () => (
-    <a href="/" style={{ display: 'inline-block' }}>
-      <img 
-        src="/static/logo.png" 
-        alt="Site Logo" 
-        style={{ height: '50px', width: 'auto' }} 
-      />
-    </a>
+    <div>
+      <a href="/">
+        <img 
+          src="/static/usefor_logo.png" 
+          alt="Logo" 
+          width="200"
+        />
+      </a>
+    </div>
   ),
 },
     Component.MobileOnly(Component.Spacer()),
