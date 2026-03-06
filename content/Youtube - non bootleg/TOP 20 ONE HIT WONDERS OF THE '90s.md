@@ -14,11 +14,7 @@ tags:
 ![](https://www.youtube.com/watch?v=_xd8hpS6IlQ)  
 
 In this episode we countdown the Top 20 One Hit Wonders of the '90s!   
-  
-Live Show!  
-Friday - 11/18 Chicago, IL Park West https://www.axs.com/events/438377/rick-beato-tickets  
-  
-\---------------------------------------------------------------------------------------------------------------------  
+ 
 SUBSCRIBE HERE → http://bit.ly/2eEs9gX  
   
 
