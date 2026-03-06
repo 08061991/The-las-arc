@@ -13,17 +13,7 @@ tags:
 ---
 ![](https://www.youtube.com/watch?v=_xd8hpS6IlQ)  
 
-In this episode we countdown the Top 20 One Hit Wonders of the '90s!  
-  
-📚👂 Ultimate Bundle Sale - ONLY $99 for all my educational products: https://rickbeato.com  
-  
-📚— The Beato Book Interactive - $99.00 value  
-👂— The Beato Ear Training Program - $99.00 value  
-🎸— The Quick Lessons Pro Guitar Course - $79.00 value  
-  
-… all for just $99.00  
-  
-Get it here: https://rickbeato.com  
+In this episode we countdown the Top 20 One Hit Wonders of the '90s!   
   
 Live Show!  
 Friday - 11/18 Chicago, IL Park West https://www.axs.com/events/438377/rick-beato-tickets  
