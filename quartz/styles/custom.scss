@@ -2,24 +2,6 @@
 
 // put your custom CSS here!
 
-/* Target the first child of the left sidebar */
-.left.sidebar > :first-child {
-  font-size: 0;
-  line-height: 0;
-  
-  &::before {
-    content: "";
-    display: block;
-    width: 250px;
-    height: 70px;
-    background-image: url('/static/usefor_logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left center;
-    margin: 0.5rem 0;
-  }
-}
-
 .content-meta span {
   display: block;
   margin-bottom: 0.25rem;
