@@ -5,19 +5,17 @@
   font-size: 0;
   line-height: 0;
   height: auto;
-  min-height: 50px;
   
   &::before {
     content: "";
     display: block;
-    width: clamp(150px, 20vw, 300px);  /* Fluid between 150-300px */
-    height: auto;
-    aspect-ratio: auto;  /* Maintains image proportions */
+    width: 250px;
+    height: 70px;
     background-image: url('/static/usefor_logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
   }
 }
 
