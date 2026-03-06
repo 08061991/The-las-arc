@@ -1,10 +1,11 @@
 @use "./base.scss";
 
+// put your custom CSS here!
+
 /* Target the first child of the left sidebar */
 .left.sidebar > :first-child {
   font-size: 0;
   line-height: 0;
-  height: auto;
   
   &::before {
     content: "";
@@ -19,7 +20,6 @@
   }
 }
 
-/* Keep your existing styles */
 .content-meta span {
   display: block;
   margin-bottom: 0.25rem;
