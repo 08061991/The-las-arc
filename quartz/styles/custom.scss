@@ -1,6 +1,24 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+/* Add logo to top-left corner */
+.page-header::before {
+  content: "";
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  background-image: url('/static/usefor_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 1rem;
+}
+
+/* Optional: adjust layout spacing */
+.page-header {
+  display: flex;
+  align-items: center;
+}
 .content-meta span {
   display: block;  /* Makes each span take its own line */
   margin-bottom: 0.25rem;
