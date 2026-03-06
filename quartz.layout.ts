@@ -26,10 +26,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    // Custom logo instead of PageTitle
-  {
-  Component: () => '<a href="/"><img src="/static/usefor_logo.png" alt="Logo" width="200"/></a>',
-},
+    Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -77,9 +74,7 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    {
-  Component: () => '<a href="/"><img src="/static/usefor_logo.png" alt="Logo" width="200"/></a>',
-},
+    Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
