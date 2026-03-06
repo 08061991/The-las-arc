@@ -2,13 +2,15 @@
 
 // put your custom CSS here!
 
-/* Target the first child of the left sidebar – the exact logo spot */
-.left.sidebar > *:first-child {
-  /* Hide any existing content/text in that spot */
+/* Target the first child of the left sidebar */
+.left.sidebar > :first-child {
+  /* Hide any existing content */
   font-size: 0;
   line-height: 0;
+  height: auto;
+  min-height: 50px;
   
-  /* Insert the logo */
+  /* Add logo */
   &::before {
     content: "";
     display: block;
@@ -18,7 +20,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
   }
 }
 
