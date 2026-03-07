@@ -86,14 +86,7 @@ export default (() => {
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
-        {/* Add cache-busting version parameter to CSS URLs */}
-{css.map((resource) => {
-  // Create a copy to avoid mutating the original resource object
-  const modifiedResource = { ...resource };
-  // Append a unique query parameter (current timestamp) to force fresh download
-  modifiedResource.url = resource.url + '?v=' + Date.now();
-  return CSSResourceToStyleElement(modifiedResource, true);
-})}
+        {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
