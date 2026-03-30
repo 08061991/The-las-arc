@@ -19,12 +19,12 @@ jobs:
 
     steps:
       - name: Checkout site repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: site
 
       - name: Checkout private notes repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: 08061991/the-las-obs.note-private
           token: ${{ secrets.NOTES_TOKEN }}
@@ -38,7 +38,7 @@ jobs:
           ls -la site/content/
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
@@ -51,10 +51,10 @@ jobs:
         run: cd site && npx quartz build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: site/public
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         id: deployment
